@@ -1,0 +1,11 @@
+1. Is the server running asyncronouly?
+=> Node server runs asynchronously.
+   When we request same server via multiple browsers, each clients are served asynchronously
+   without waiting for the first to respond.
+
+
+
+2. Result of using process.nextTick
+=> When we use nextTick, all the process in nextTick stack should be cleared to start next event loop
+   and all IO processes are also blocked until nextTick is finished.
+   But setImmediate, recursion uses separate event loop so does not block next event loop.
