@@ -1,0 +1,46 @@
+
+
+<table>
+
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Zip code</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Website</th>
+    </tr>
+
+    <% users.forEach(function(user){ %>
+    <tr>
+        <td><%= user.id  %></td>
+        <td><%= user.name  %></td>
+        <td><%= user.username  %></td>
+        <td><%= user.email  %></td>
+        <td><%= user.address.city  %></td>
+        <td><%= user.address.zipcode  %></td>
+        <td><%= user.address.geo.lat  %></td>
+        <td><%= user.address.geo.lng  %></td>
+        <td><%= user.website  %></td>
+
+    </tr>
+
+    <% }) %>
+</table>
+
+<style>
+    table, tr, td, th {
+        border:1px solid darkcyan;
+        border-collapse: collapse;
+        padding:10px;
+        margin: 0 auto;
+    }
+
+    th {
+        background: darkblue;
+        color: #fff;
+    }
+</style>
