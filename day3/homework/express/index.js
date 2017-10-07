@@ -23,13 +23,14 @@ app.get("/users", (req, res) => {
     // getUsers(res);
 
 
-
     fetch('http://jsonplaceholder.typicode.com/users/')
         .then(function (res) {
             return res.json();
-        }).then(function (json) {
-        res.render('index', {users: json});
-    });
+        })
+        .then(function (json) {
+            res.render('index', {users: json}
+            );
+        });
 
 
 });
