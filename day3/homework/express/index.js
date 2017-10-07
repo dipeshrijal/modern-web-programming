@@ -14,23 +14,21 @@ app.set("views", path.join(__dirname, 'public'));
 
 app.get("/users", (req, res) => {
 
-    // async  function getUsers(params) {
-    //     const data = await fetch('http://jsonplaceholder.typicode.com/users/');
-    //     const json = await res.json;
-    //     res.render('index', {users: json});
-    // }
-    //
-    // getUsers(res);
+    (async function getUsers(params) {
+        const data = await fetch('http://jsonplaceholder.typicode.com/users/');
+        const json = await data.json();
+        res.render('index', {users: json});
+    })();
 
 
-    fetch('http://jsonplaceholder.typicode.com/users/')
-        .then(function (res) {
-            return res.json();
-        })
-        .then(function (json) {
-            res.render('index', {users: json}
-            );
-        });
+    // fetch('http://jsonplaceholder.typicode.com/users/')
+    //     .then(function (res) {
+    //         return res.json();
+    //     })
+    //     .then(function (json) {
+    //         res.render('index', {users: json}
+    //         );
+    //     });
 
 
 });
