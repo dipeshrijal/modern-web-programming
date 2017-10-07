@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <link rel="stylesheet" href="/api/resources/styles.css">
+</head>
+<body>
+<h1>Books</h1>
+
+<form action="/api/books" method="post">
+    <label for="name">
+        Name: <input type="text" name="name">
+    </label>
+
+    <label for=""> ISBN: <input type="text" name="ISBN"></label>
+
+
+    <button type="submit">Submit</button>
+</form>
+
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>ISBN</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <% books.forEach(function(book){ %>
+    <tr>
+        <td><%= book.name  %></td>
+        <td><%= book.ISBN  %></td>
+        <td><a href="/api/books/<%= book._id %>/edit">Edit</a></td>
+        <td><a href="/api/books/delete/<%= book._id %>">Delete</a></td>
+    </tr>
+    <% }) %>
+</table>
+</body>
+</html>
