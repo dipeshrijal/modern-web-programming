@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CDS</title>
+    <link rel="stylesheet" href="/api/resources/styles.css">
+</head>
+<body>
+<h1>Cds</h1>
+
+<form action="/api/cds" method="post">
+
+    <label for="name">
+        Name: <input type="text" name="name">
+    </label>
+
+    <label for=""> Description: <input type="text" name="description"></label>
+
+
+    <button type="submit">Submit</button>
+</form>
+
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <% cds.forEach(function(cd){ %>
+    <tr>
+        <td><%= cd.name  %></td>
+        <td><%= cd.description  %></td>
+        <td><a href="/api/cds/<%= cd._id %>/edit">Edit</a></td>
+        <td><a href="/api/cds/delete/<%= cd._id %>">Delete</a></td>
+    </tr>
+    <% }) %>
+</table>
+</body>
+</html>

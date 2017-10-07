@@ -20,11 +20,13 @@ app.use(bodyParser.json());
 
 // application routes
 const books = require("./routes/books");
+const cds = require("./routes/cds");
 
 app.get('/', function (req, res) {
     res.render('home');
 });
 
 app.use("/api/books", books);
+app.use("/api/cds", cds);
 
-app.listen(3000);
+app.listen(8000);

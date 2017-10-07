@@ -14,13 +14,14 @@ app.set("views", path.join(__dirname, 'public'));
 
 app.get("/users", (req, res) => {
 
-    (async function getUsers(params) {
+    // async function
+    (async function getUsers() {
         const data = await fetch('http://jsonplaceholder.typicode.com/users/');
         const json = await data.json();
         res.render('index', {users: json});
     })();
 
-
+    // promise functions
     // fetch('http://jsonplaceholder.typicode.com/users/')
     //     .then(function (res) {
     //         return res.json();
