@@ -23,7 +23,7 @@ router.get('/:id/edit', function (req, res) {
     });
 });
 
-router.post('/:id', function (req, res) {
+router.put('/:id', function (req, res) {
 
     Cd.findOne({_id: req.params.id}, function (err, cd) {
         if (err) res.send("Invalid Id");
@@ -38,7 +38,7 @@ router.post('/:id', function (req, res) {
     });
 });
 
-router.get('/delete/:id', function (req, res) {
+router.delete('/:id', function (req, res) {
 
     Cd.findOne({_id: req.params.id}, function (err, cd) {
         if (err) {

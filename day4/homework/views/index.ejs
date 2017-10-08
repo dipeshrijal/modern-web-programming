@@ -7,25 +7,5 @@
 </head>
 <body>
 <h1>Hello World</h1>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Author</th>
-        <th>ISBN</th>
-        <th>Update</th>
-        <th>Delete</th>
-    </tr>
-    <% books.forEach(function(book){ %>
-    <tr>
-        <td><%= book.id  %></td>
-        <td><%= book.name  %></td>
-        <td><%= book.author %></td>
-        <td><%= book.isbn  %></td>
-        <td>Update</td>
-        <td><a href="/api/books/<%= book.id%>" >Delete</a></td>
-    </tr>
-    <% }) %>
-</table>
 </body>
 </html>

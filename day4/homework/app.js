@@ -5,7 +5,7 @@ const morgan  = require("morgan");
 const fs = require("fs");
 const app = express();
 const books = require("./routes/books");
-const cd = require("./routes/cd");
+const cds = require("./routes/cds");
 const logger = require("./middleware/logger");
 app.set('view engine', 'ejs');
 const bodyParser = require('body-parser');
@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 });
 
 app.use('/api/books', books);
-app.use('/api/cds', cd);
+app.use('/api/cds', cds);
 
 
-app.listen(8000);
+app.listen(8888);
