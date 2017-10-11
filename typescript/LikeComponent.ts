@@ -1,26 +1,30 @@
 export default class LikeComponent {
-    likesCount: number;
+    private _likesCount: number;
     private _active: boolean;
 
     constructor() {
-        this.likesCount = 0;
+        this._likesCount = 0;
         this._active = false;
     }
 
-    get active() {
+    get likesCount() : number {
+        return this._likesCount;
+    }
+
+    get active(): boolean {
         return this._active;
     }
 
-    set active (value : boolean) {
+    set active(value: boolean) {
         this._active = value;
     }
 
     onClick() {
-        if(this.active) {
-            this.likesCount++;
+        if (! this.active) {
+            this._likesCount++;
         } else {
             if (this.likesCount > 0) {
-                this.likesCount--;
+                this._likesCount--;
             }
         }
     }

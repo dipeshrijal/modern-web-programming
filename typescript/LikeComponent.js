@@ -1,10 +1,17 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var LikeComponent = (function () {
+exports.__esModule = true;
+var LikeComponent = /** @class */ (function () {
     function LikeComponent() {
-        this.likesCount = 0;
+        this._likesCount = 0;
         this._active = false;
     }
+    Object.defineProperty(LikeComponent.prototype, "likesCount", {
+        get: function () {
+            return this._likesCount;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(LikeComponent.prototype, "active", {
         get: function () {
             return this._active;
@@ -16,16 +23,15 @@ var LikeComponent = (function () {
         configurable: true
     });
     LikeComponent.prototype.onClick = function () {
-        if (this.active) {
-            this.likesCount++;
+        if (!this.active) {
+            this._likesCount++;
         }
         else {
             if (this.likesCount > 0) {
-                this.likesCount--;
+                this._likesCount--;
             }
         }
     };
     return LikeComponent;
 }());
-exports.default = LikeComponent;
-//# sourceMappingURL=LikeComponent.js.map
+exports["default"] = LikeComponent;

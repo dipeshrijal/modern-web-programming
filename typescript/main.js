@@ -1,9 +1,11 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var LikeComponent_1 = require("./LikeComponent");
-var component = new LikeComponent_1.default();
+var component = new LikeComponent_1["default"]();
+component.onClick(); // 1
+component.onClick(); // 2
 component.active = true;
-component.onClick();
-component.onClick();
+component.onClick(); // 1
+component.active = false;
+component.onClick(); // 2
 console.log(component.likesCount);
-//# sourceMappingURL=main.js.map
