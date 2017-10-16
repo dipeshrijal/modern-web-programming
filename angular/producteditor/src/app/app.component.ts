@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Product} from "./product";
+import {Product} from './product';
 
 const PRODUCTS: Product[] = [
   {id: 1, name: 'Macbook'},

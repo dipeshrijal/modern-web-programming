@@ -8,7 +8,7 @@ import {Component} from '@angular/core';
       <li>
         <div class="user-view">
           <div class="background">
-            <img src="../../assets/cover.jpeg">
+            <img src="../../assets/cover4.jpg">
           </div>
           <a href="#"><img class="circle"
                            src="../../assets/profile.jpeg"></a>

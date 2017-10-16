@@ -1,0 +1,29 @@
+<div class="col s12 m3">
+  <div class="card">
+    <div class="card-image">
+      <a href="#modal1"
+         (click)="onSelect()"
+         class="modal-trigger">
+        <img [src]="product.image">
+      </a>
+      <span class="card-title"
+            style="color: darkcyan;">{{product.name}}</span>
+      <a href="#modal1"
+         (click)="onSelect()"
+         class="edit btn-floating halfway-fab waves-effect waves-light blue darken-3 modal-trigger">
+        <i class="material-icons">visibility</i>
+      </a>
+      <a href="#"
+         (click)="addToCart()"
+         class="btn-floating halfway-fab waves-effect waves-light green darken-3">
+        <i class="material-icons">add_shopping_cart</i>
+      </a>
+    </div>
+    <div class="card-content">
+      <p>Price: {{'$' + product.price}}</p>
+      <p></p>
+    </div>
+  </div>
+</div>
+<product-details></product-details>
+
