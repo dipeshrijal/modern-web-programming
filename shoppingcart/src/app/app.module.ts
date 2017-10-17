@@ -7,9 +7,9 @@ import {ProductComponent} from './product/product.component';
 import {NavbarComponent} from './components/navbar.component';
 import {SidebarComponent} from './components/sidebar.component';
 import {ProductService} from './product/product.service';
-import {CartService} from './cart/cart.service';
 import {ProductListComponent} from './product/product-list/product-list.component';
 import {ProductDetailsComponent} from './product/product-details/product-details.component';
+import {ModalComponent} from './components/modal.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +19,13 @@ import {ProductDetailsComponent} from './product/product-details/product-details
     SidebarComponent,
     ProductListComponent,
     ProductDetailsComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
     CartModule
   ],
-  providers: [ProductService, CartService],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

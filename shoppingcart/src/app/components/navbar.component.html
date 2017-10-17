@@ -1,0 +1,64 @@
+<!-- Dropdown Structure -->
+<ul id="dropdown1"
+    class="dropdown-content">
+  <li><a href="#">Profile</a></li>
+  <li><a href="#">Settings</a></li>
+  <li class="divider"></li>
+  <li><a href="#">Logout</a></li>
+</ul>
+
+<div class="navbar-fixed teal">
+  <nav>
+    <div class="nav-wrapper teal">
+      <a href="#"
+         class="brand-logo btn-floating btn-large teal"
+         id="button-collapse"
+         data-activates="slide-out">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right">
+        <li><a href="">Sass</a></li>
+        <li>
+          <a href="#nav-modal"
+             class="modal-trigger">
+            <span *ngIf="shoppingCartItems.length > 0">{{getCartTotal()}}</span>
+            <i class="material-icons right">shopping_cart</i></a>
+        </li>
+        <!-- Dropdown Trigger -->
+        <li>
+          <a class="dropdown-button"
+             href="#"
+             data-activates="dropdown1">
+            Dipesh
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<!--Modal For Displaying Current Cart Items-->
+<app-modal [modalName]="'nav-modal'">
+  <table class="bordered striped">
+    <thead>
+    <tr>
+      <th>S.N.</th>
+      <th>Item Name</th>
+      <th>Item Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let item of shoppingCartItems; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{item.product.name}}</td>
+      <td>{{item.product.price}}</td>
+      <td>{{item.quantity || 'working'}}</td>
+      <td>{{item.product.price | calculate:item.quantity }}</td>
+    </tr>
+    </tbody>
+  </table>
+</app-modal>

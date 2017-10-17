@@ -1,18 +1,10 @@
-<!--Modal-->
-<div id="modal1"
-     class="modal modal-fixed-footer">
-  <div class="modal-content"
-       *ngIf="selectedProduct">
+<app-modal [modalName]="'product-modal'">
+  <div *ngIf="selectedProduct">
     <h4 style="color: darkcyan;">{{ selectedProduct.name }}</h4>
     <img [src]="selectedProduct.image"
          alt="{{selectedProduct.name}}">
     <p>Price: {{'$' + selectedProduct.price}}</p>
 
     <cart [product]="selectedProduct"></cart>
-
   </div>
-  <div class="modal-footer">
-    <button class="modal-action modal-close btn-flat waves-effect waves-red right">close
-    </button>
-  </div>
-</div>
+</app-modal>
