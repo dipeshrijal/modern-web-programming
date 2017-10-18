@@ -1,22 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Product} from './product';
-
-const PRODUCTS: Product[] = [
-  {id: 1, name: 'Macbook'},
-  {id: 2, name: 'iPhone'},
-  {id: 3, name: 'Samsung'},
-  {id: 4, name: 'Dell'},
-  {id: 5, name: 'Hard Drives'},
-  {id: 6, name: 'Webcam'},
-  {id: 7, name: 'RAM'},
-  {id: 8, name: 'Graphics Card'},
-  {id: 9, name: 'ROM'},
-  {id: 10, name: 'iPad'}
-];
+import {ProductService} from './product.service';
 
 @Component({
   selector: 'my-app',
   styleUrls: ['./app.component.css'],
+  providers: [ProductService],
   template: `
     <h1>{{title}}</h1>
     <h2>My Products</h2>
@@ -30,10 +19,17 @@ const PRODUCTS: Product[] = [
     <product-detail [product]="selectedProduct"></product-detail>
   `,
 })
-export class AppComponent {
-  title = 'Products';
-  products = PRODUCTS;
+export class AppComponent implements OnInit{
+  products:Product[];
   selectedProduct: Product;
+
+  constructor(private productService: ProductService) {
+  }
+
+  ngOnInit() {
+    this.getHeroes();
+  }
+
   product: Product = {
     id: 1,
     name: 'Windstorm'
@@ -41,6 +37,10 @@ export class AppComponent {
 
   onSelect(product: Product): void {
     this.selectedProduct = product;
+  }
+
+  getHeroes(): void {
+    this.productService.getProductsSlowly().then(products => this.products = products);
   }
 }
 
