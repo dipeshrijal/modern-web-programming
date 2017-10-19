@@ -2,9 +2,10 @@
 <div [id]="modalName"
      class="modal modal-fixed-footer">
   <div class="modal-content">
-    <ng-content></ng-content>
+    <ng-content select=".body"></ng-content>
   </div>
   <div class="modal-footer">
+    <ng-content select=".footer"></ng-content>
     <button class="modal-action modal-close btn-flat waves-effect waves-red right">close
     </button>
   </div>

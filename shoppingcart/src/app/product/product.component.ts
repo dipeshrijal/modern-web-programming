@@ -18,4 +18,8 @@ export class ProductComponent implements OnInit {
     this.products = this.productService.getProducts();
   }
 
+  addProduct() {
+    console.log('submit from product compoennt');
+  }
+
 }

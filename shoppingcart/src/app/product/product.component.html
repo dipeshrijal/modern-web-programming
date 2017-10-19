@@ -1,4 +1,50 @@
 <!-- Page Layout here -->
 <div class="row">
-  <product-list *ngFor="let productEl of products" [product]="productEl"></product-list>
+  <product-list *ngFor="let productEl of products"
+                [product]="productEl"></product-list>
 </div>
+
+
+<div class="fixed-action-btn">
+  <a href="#form-modal"
+     class="btn-floating btn-large red modal-trigger">
+    <i class="large material-icons">add</i>
+  </a>
+</div>
+
+<app-modal [modalName]="'form-modal'">
+  <div class="body">
+    <h4>Add Product</h4>
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="first_name"
+                 type="text"
+                 class="validate">
+          <label for="first_name">Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="last_name"
+                 type="text"
+                 class="validate">
+          <label for="last_name">Price</label>
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+  <div class="footer">
+    <button class="btn waves-effect waves-light right"
+            (click)="addProduct()">Submit
+      <i class="material-icons right">send</i>
+    </button>
+  </div>
+</app-modal>
+
+
+

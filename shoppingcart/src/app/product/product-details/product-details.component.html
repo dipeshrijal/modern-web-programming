@@ -1,5 +1,5 @@
 <app-modal [modalName]="'product-modal'">
-  <div *ngIf="selectedProduct">
+  <div class="body" *ngIf="selectedProduct">
     <h4 style="color: darkcyan;">{{ selectedProduct.name }}</h4>
     <img [src]="selectedProduct.image"
          alt="{{selectedProduct.name}}">
