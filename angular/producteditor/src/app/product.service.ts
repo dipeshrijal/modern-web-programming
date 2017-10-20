@@ -14,4 +14,9 @@ export class ProductService {
       setTimeout(() => resolve(this.getProducts()), 2000);
     });
   }
+
+  getProduct(id: number) {
+    return this.getProducts()
+      .then(products => products.find(product => product.id === id));
+  }
 }
